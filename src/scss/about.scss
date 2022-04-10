@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+.about-container{
+    text-align: left;
+    max-width: 1146px;
+    width: 100%;
+    padding-top: 64px;
+    margin: auto;
+    .about-heading{
+        font-size: 48px;
+        color: $active_white;
+        font-weight: bold;
+        padding-bottom: 12px;
+    }
+    span{
+        color: $text;
+    }
+    .sub-text{
+        font-size: 24px;
+        font-weight: bold;
+        padding:32px 0;
+        color: $active_white;
+    }
+    .answer{
+        color: $active;
+        padding: 12px 0 24px;
+    }
+    .question{
+        color: $text;
+    }
+}

@@ -1,0 +1,29 @@
+@import './variables.scss';
+
+.notFound{
+    background: $bg_body;
+    height: 100vh;
+    margin: auto;
+    color: $text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .notFound-text{
+        font-size: 32px;
+    }
+    p{
+        max-width: 483px;
+        width: auto;
+        margin: auto;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    button{
+        cursor: pointer;
+        background: $button;
+        color: $active_white;
+        border-radius: 12px;
+        padding: 12px 24px;
+        border-color: unset !important;
+    }
+}

@@ -1,0 +1,135 @@
+@import './variables.scss';
+
+header{
+    max-width: 1440px;
+    width: 100%;
+    height: 80px;
+    background: $bg_color;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 150px;
+}
+.nav-links{
+    color: $grey;
+    text-decoration: none;
+}
+.nav-links-span:nth-child(1){
+    padding-right: 48px;
+}
+.active{
+    color: $active_white;
+}
+.footer{
+    color: $grey;
+    padding-top: 120px;
+    padding-bottom: 96px;
+    .footer_icons-list{
+        padding-top: 24px;
+    .footer_icons2{
+        padding: 0 64px;
+    }
+    }
+}
+section{
+    background: $bg_body;
+}
+.loading{
+    img{
+        max-width: 200px;
+        margin-top: 205px;
+    }
+}
+.table{
+    border: 1px solid $border_grey;
+    padding: 24px;
+    background: $bg2;
+    border-radius: 12px;
+    text-align: left;
+    max-width: 1146px;
+    width: 100%;
+    margin: auto;
+    th{
+        color: $active_white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .tableData{
+        font-size: 14px;
+    }
+    .stateNames{
+        color: $active_white;
+    }
+}
+.confirmed-state{
+    color: $confirmed;
+}
+.active-state{
+    color: $active;
+}
+.recovered-state{
+    color: $recovered;
+}
+.deceased-state{
+    color: $diceased;
+}
+.population-state{
+    color: $grey;
+}
+.icon{
+    cursor: pointer;
+}
+.cards-container{
+    display: flex;
+    font-size: 16px;
+    margin: auto;
+    width: 100%;
+    max-width: 976px;
+    justify-content: space-between;
+    padding-top: 112px;
+    padding-bottom: 106px;
+    div{
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 100%;
+            margin: auto;
+            padding-top: 24px;
+            padding-bottom: 32px;
+        }
+    }
+}
+
+.select-container{
+    padding-top: 64px;
+    .select{
+        max-width: 824px;
+        margin: auto;
+        border: 1px solid $border_grey;
+        padding: 14px;
+        background: $bg2;
+        border-radius: 8px;
+        text-align: left;
+        color: $text !important;
+        .css-dvua67-singleValue{
+            color: $text !important;
+        }
+        .css-1sce051-control{
+            background-color: unset !important;
+            &:hover{
+                border-color: unset !important;
+            }
+        }
+        .css-bg1rzq-control,.css-13h72ze-control{
+            background-color: unset !important;
+            border-color: unset !important;
+            border-style: unset !important;
+            &:focus-visible,&:focus,&:focus-within,&:active,&:visited{
+                outline: unset !important;
+            }
+        }
+    }
+}

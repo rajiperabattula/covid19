@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import Home from './pages/Home';
+import About from './pages/About';
+import StateSpecific from './pages/StateSpecific';
+import NotFound from './pages/NotFound';
+import 'react-toastify/dist/ReactToastify.css';
+import './scss/common.scss';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/state/:stateCode' element={<StateSpecific/>}/>
+        <Route path='*' element={<NotFound/>} />
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
