@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import {statesList,options} from '../json/stateName.js';
+import {statesList} from '../json/stateName.js';
 import {FcGenericSortingAsc,FcGenericSortingDesc} from 'react-icons/fc';
 import MySelect from '../components/Select';
 
@@ -58,7 +59,7 @@ function Home(){
       }
 
     let convertedDataArray = convertObjectsDataIntoListItemsUsingForInMethod();
-    console.log("convertedDataArray",convertedDataArray);
+    console.log("convertedDataArray",data);
 
     let totalConfirmed=0;
     let totalActive=0;
@@ -95,8 +96,10 @@ function Home(){
         })
    }
 
+   let history = useNavigate();
    const handleSelected = (value) => {
        setSelected(value);
+       history(`/state/${value}`);
    }
 
     return(
@@ -108,8 +111,7 @@ function Home(){
         </div>
          :
         <section>
-        {/* <MySelect selected={selected} onChange={handleSelected} options={options}/> */}
-            {console.log("loaded data",data)}
+        <MySelect selected={selected} onChange={handleSelected}/>
             <div className='cards-container'>
                 <div className='confirmed-block'>
                     <p className='confirmed-state'>Confirmed</p>

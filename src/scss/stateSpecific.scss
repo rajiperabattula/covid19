@@ -1,0 +1,94 @@
+@import './variables.scss';
+
+.stateSpecific-page{
+    .top-section{
+        padding: 64px 0;
+        max-width: 1146px;
+        width: 100%;
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        color: $text;
+        .state-name-date,.state-tested-count{
+            display: flex;
+            flex-direction: column;
+        }
+        .state-tested-count span{
+            text-align: right;
+            &:nth-child(2){
+                font-size: 24px;
+            }
+        }
+        .state-heading{
+            width: 312px;
+            height: 64px;
+            border-radius: 32px;
+            background: rgba(2, 132, 199, 0.16);
+            font-weight: 600;
+            font-size: 32px;
+            color: #0EA5E9;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+    }
+    .cards-container{
+        padding-top: 0px;
+        div{
+            width: 264px;
+            height: 232px;
+            border-radius: 12px;
+            cursor: pointer;
+            justify-content: center;
+            img{
+                max-width: 38px;
+                width: 100%;
+                margin: auto;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+        .confirmed-block{
+            &:hover,&:focus,&:visited,&:focus-visible{
+            background: #331427;
+            }
+        }
+        .active-block{
+            &:hover,&:focus,&:visited,&:focus-visible{
+            background: #132240;
+            }
+        }
+        .recovered-block{
+            &:hover,&:focus,&:visited,&:focus-visible{
+            background: #182829;
+            }
+        }
+        .deceased-block{
+            &:hover,&:focus,&:visited,&:focus-visible{
+            background: #212230;
+            }
+        }
+    }
+    .top-districts{
+        max-width: 1146px;
+        width: 100%;
+        margin: auto;
+        color: $text;
+        &-title{
+            text-align: left;
+            font-weight: 500;
+            font-size: 32px;
+        }
+        &-content-section{
+            display: flex;
+        }
+    }
+}
+
+.bar{
+    border-radius: 8px 8px 0px 0px;
+}

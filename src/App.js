@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import {createBrowserHistory} from 'history';
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -11,7 +12,7 @@ import './scss/common.scss';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter history={createBrowserHistory()}>
     <div className="App">
       <ToastContainer/>
       <Routes>

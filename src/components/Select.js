@@ -1,16 +1,20 @@
 import React from "react";
-import Select from "react-select";
+import { statesList } from "../json/stateName";
 
 function MySelect(props) {
     return (
     <div className="select-container">
-      <Select
-        value={props.selected}
-        onChange={props.onChange}
-        options={props.options}
-        placeholder={'Select the state...'}
-        className="select"
-      />
+      <select placeholder='Select the state...' className="select" onChange={(e) => {
+        props.onChange(e.target.value)
+        }}>
+        {
+          statesList.map((ele)=>{
+            return(
+              <option value={ele.state_code}>{ele.state_name}</option>
+            )
+          })
+        }
+      </select>
     </div>
     );
 }

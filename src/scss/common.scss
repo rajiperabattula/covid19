@@ -107,6 +107,7 @@ section{
     padding-top: 64px;
     .select{
         max-width: 824px;
+        width: 100%;
         margin: auto;
         border: 1px solid $border_grey;
         padding: 14px;
@@ -114,22 +115,5 @@ section{
         border-radius: 8px;
         text-align: left;
         color: $text !important;
-        .css-dvua67-singleValue{
-            color: $text !important;
-        }
-        .css-1sce051-control{
-            background-color: unset !important;
-            &:hover{
-                border-color: unset !important;
-            }
-        }
-        .css-bg1rzq-control,.css-13h72ze-control{
-            background-color: unset !important;
-            border-color: unset !important;
-            border-style: unset !important;
-            &:focus-visible,&:focus,&:focus-within,&:active,&:visited{
-                outline: unset !important;
-            }
-        }
     }
 }
