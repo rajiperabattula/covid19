@@ -30,7 +30,7 @@ function About(){
             <img src="../images/load.gif" alt='loader'/>
         </div>
          :
-        <section>
+        <section className='about-section'>
             <div className='about-container'>
                 <div className='about-heading'>About</div>
                 <span>Last update on march 28th 2021.</span>

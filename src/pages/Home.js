@@ -134,21 +134,23 @@ function Home(){
                     <span className='deceased-state'>{totalDeceased}</span>
                 </div>
             </div>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>States/UT <FcGenericSortingAsc className='icon' onClick={()=>ascTheOrder()}/> <FcGenericSortingDesc className='icon' onClick={()=>descTheOrder()}/></th>
-                        <th>Confirmed</th>
-                        <th>Active</th>
-                        <th>Recovered</th>
-                        <th>Deceased</th>
-                        <th>Population</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {tdData()}
-                </tbody>
-            </table>
+            <div className='home-table'>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>States/UT <FcGenericSortingAsc className='icon' onClick={()=>ascTheOrder()}/> <FcGenericSortingDesc className='icon' onClick={()=>descTheOrder()}/></th>
+                            <th>Confirmed</th>
+                            <th>Active</th>
+                            <th>Recovered</th>
+                            <th>Deceased</th>
+                            <th>Population</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {tdData()}
+                    </tbody>
+                </table>
+            </div>
         <Footer/>
         </section>
         }

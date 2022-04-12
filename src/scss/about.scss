@@ -1,5 +1,12 @@
 @import './variables.scss';
 
+.about-section{
+    @media screen and (max-width:1200px) {
+        padding: 0 24px;
+        overflow-x: hidden;
+    }
+}
+
 .about-container{
     text-align: left;
     max-width: 1146px;

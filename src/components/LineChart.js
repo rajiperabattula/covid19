@@ -7,7 +7,7 @@ import {
   Tooltip,
   Legend,
   Line,
-  Bar
+  Label
 } from "recharts";
 
 function MyLineChart(props){
@@ -25,17 +25,16 @@ function MyLineChart(props){
     return(
         <>
         <LineChart
-          width={1046}
-          height={350}
+          width={1146}
+          height={328}
           data={data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis />
+          <XAxis dataKey="date"><Label className="x-axis-label" value={props.selectedTab==='tested'? 'active' : props.selectedTab} angle={0} position="right" dy="50" /></XAxis>
+          <YAxis/>
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="count" stroke={props.strokeColor} />
+          <Line type="monotone" dataKey="count" stroke={props.strokeColor} activeDot={{ r: 6 }}/>
         </LineChart>
         </>
     )

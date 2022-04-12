@@ -37,7 +37,7 @@
     .cards-container{
         padding-top: 0px;
         div{
-            width: 264px;
+            width: 234px;
             height: 232px;
             border-radius: 12px;
             cursor: pointer;
@@ -52,24 +52,24 @@
                 margin-bottom: 0;
             }
         }
-        .confirmed-block{
+        .confirmed-block,#confirmed-block{
             &:hover,&:focus,&:visited,&:focus-visible{
-            background: #331427;
+            background: #331427 !important;
             }
         }
-        .active-block{
+        .active-block,#active-block{
             &:hover,&:focus,&:visited,&:focus-visible{
-            background: #132240;
+            background: #132240 !important;
             }
         }
-        .recovered-block{
+        .recovered-block,#recovered-block{
             &:hover,&:focus,&:visited,&:focus-visible{
-            background: #182829;
+            background: #182829 !important;
             }
         }
-        .deceased-block{
+        .deceased-block,#deceased-block{
             &:hover,&:focus,&:visited,&:focus-visible{
-            background: #212230;
+            background: #212230 !important;
             }
         }
     }
@@ -84,11 +84,64 @@
             font-size: 32px;
         }
         &-content-section{
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,180px);
+            gap: 10px;
+            .district-text-block{
+                display: flex;
+                text-align: left;
+                color: $grey;
+                .district-name{
+                    flex: 1;
+                    padding-left: 8px;
+                }
+                .district-value{
+                    min-width: 60px;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
 
 .bar{
     border-radius: 8px 8px 0px 0px;
+}
+
+#confirmed-block{
+    background: #331427;
+}
+
+.line-charts-block,.barCharts-block{
+    max-width: 1146px;
+    width: 100%;
+    margin: auto;
+    margin-top: 95px;
+}
+
+.confirmed-lineChart{
+    background: #331427;
+    margin-top: 48px;
+}
+.active-lineChart{
+    background: #132240;
+    margin-top: 48px;
+}
+.recovered-lineChart{
+    background: #182829;
+    margin-top: 48px;
+}
+.deceased-lineChart{
+    background: #212230;
+    margin-top: 48px;
+}
+.line-chart-heading{
+    color: #CBD5E1;
+    font-size: 32px;
+    text-align: left;
+}
+.x-axis-label{
+    tspan{
+    color: $confirmed;
+    }
 }

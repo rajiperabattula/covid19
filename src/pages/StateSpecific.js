@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import '../scss/stateSpecific.scss';
 import MyBarChart from '../components/BarChart';
 import MyLineChart from '../components/LineChart';
+import { statesList } from '../json/stateName';
 
 
 function StateSpecific(){
@@ -46,7 +47,7 @@ Object.keys(timelineStateData).forEach((key)=>{
         casesData: timelineStateData[key].total
     })
 })
-timelineStateDataArray.splice(10,timelineStateDataArray.length);
+// timelineStateDataArray.splice(10,timelineStateDataArray.length);
 }
 console.log("dates",timelineStateDataArray);
 
@@ -123,7 +124,7 @@ const changeData = (selectedTab) =>{
         <section className='stateSpecific-page'>
             <div className='top-section'>
                 <div className='state-name-date'>
-                    <span className='state-heading'>Andhra Pradesh</span>
+                    <span className='state-heading'>{statesList.find((state)=> state.state_code === params).state_name}</span>
                     <span className='state-date'>{`last updated on ${month} ${day}, ${year}`}</span>
                 </div>
                 <div className='state-tested-count'>
@@ -162,8 +163,8 @@ const changeData = (selectedTab) =>{
                         districtArray.map((ele)=>{
                             return(
                                 <div className='district-text-block'>
-                                    <span className='district-value'>{ele.districtName}</span>
-                                    <span className='district-name'>{ele.districtData[currentSelectedType]}</span>
+                                    <span className='district-value'>{ele.districtData[currentSelectedType]}</span>
+                                    <span className='district-name'>{ele.districtName}</span>
                                 </div>
                                 )
 
@@ -171,14 +172,24 @@ const changeData = (selectedTab) =>{
                     }
                 </div>
             </div>
-
+            
+            <div className='barCharts-block'>
             <MyBarChart dates={timelineStateDataArray} selectedTab={currentSelectedType} fillColor={fillColor}/>
+            </div>
             <div className='line-charts-block'>
-                <div className='line-chart-heading'></div>
-                <MyLineChart dates={timelineStateDataArray} selectedTab='confirmed' strokeColor='#9A0E31'/>
-                <MyLineChart dates={timelineStateDataArray} selectedTab='tested' strokeColor='#0A4FA0'/>
-                <MyLineChart dates={timelineStateDataArray} selectedTab='recovered' strokeColor='#216837'/>
-                <MyLineChart dates={timelineStateDataArray} selectedTab='deceased' strokeColor='#474C57'/>
+                <div className='line-chart-heading'>Daily Spread Trends</div>
+                <div className='confirmed-lineChart'>
+                    <MyLineChart dates={timelineStateDataArray} selectedTab='confirmed' strokeColor='#9A0E31'/>
+                </div>
+                <div className='active-lineChart'>
+                    <MyLineChart dates={timelineStateDataArray} selectedTab='tested' strokeColor='#0A4FA0'/>
+                </div>
+                <div className='recovered-lineChart'>
+                    <MyLineChart dates={timelineStateDataArray} selectedTab='recovered' strokeColor='#216837'/>
+                </div>
+                <div className='deceased-lineChart'>
+                    <MyLineChart dates={timelineStateDataArray} selectedTab='deceased' strokeColor='#474C57'/>
+                </div>
             </div>
 
 

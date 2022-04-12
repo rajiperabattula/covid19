@@ -21,12 +21,12 @@ function MyBarChart(props){
         })
     });
     }
+    data.splice(10,data.length);
     console.log("sssssssss",data);
     return(
         <>
         <div>
         <BarChart width={1046} height={350} data={data}>
-          <CartesianGrid strokeDasharray="" />
           <XAxis dataKey="date" />
           <YAxis />
           <Tooltip />
