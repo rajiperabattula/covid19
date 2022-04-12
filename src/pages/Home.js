@@ -106,13 +106,13 @@ function Home(){
         <>
         <Header/>
         {data.length === 0 ? 
-        <div className="loading">
+        <div className="loading" testid="homePageLoader">
             <img src="../images/load.gif" alt='loader'/>
         </div>
          :
-        <section>
+        <section testid="homePageSection">
         <MySelect selected={selected} onChange={handleSelected}/>
-            <div className='cards-container'>
+            <div className='cards-container' testid="homePageCardsContainer">
                 <div className='confirmed-block'>
                     <p className='confirmed-state'>Confirmed</p>
                     <img src='../images/confirmed.svg' alt='confirmed-icon'/>
@@ -134,8 +134,8 @@ function Home(){
                     <span className='deceased-state'>{totalDeceased}</span>
                 </div>
             </div>
-            <div className='home-table'>
-                <table className="table">
+            <div className='home-table' testid="homePagetable">
+                <table className="table" testid="homePageInnerTable">
                     <thead>
                         <tr>
                             <th>States/UT <FcGenericSortingAsc className='icon' onClick={()=>ascTheOrder()}/> <FcGenericSortingDesc className='icon' onClick={()=>descTheOrder()}/></th>

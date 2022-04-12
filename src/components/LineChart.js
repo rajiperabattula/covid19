@@ -24,6 +24,7 @@ function MyLineChart(props){
     console.log("sssssssss",data);
     return(
         <>
+        <div testid="lineChart">
         <LineChart
           width={window.innerWidth>900 ? 1146 : (window.innerWidth>450? 360:330)}
           height={328}
@@ -36,6 +37,7 @@ function MyLineChart(props){
           <Legend />
           <Line type="monotone" dataKey="count" stroke={props.strokeColor} activeDot={{ r: 6 }}/>
         </LineChart>
+        </div>
         </>
     )
 }

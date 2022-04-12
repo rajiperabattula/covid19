@@ -26,20 +26,20 @@ function About(){
         <>
         <Header/>
         {faqData.length === 0 ? 
-        <div className="loading">
+        <div className="loading" testid="aboutLoader">
             <img src="../images/load.gif" alt='loader'/>
         </div>
          :
-        <section className='about-section'>
-            <div className='about-container'>
+        <section className='about-section' testid="aboutSection">
+            <div className='about-container' testid='aboutContainer'>
                 <div className='about-heading'>About</div>
                 <span>Last update on march 28th 2021.</span>
                 <p className='sub-text'>COVID-19 vaccines be ready for distribution</p>
-                <div className='faq-container'>
+                <div className='faq-container' testid="faqContainer">
                     {
                         faqData.map((ele)=>{
                             return(
-                                <div className='faq-each'>
+                                <div className='faq-each' testid="faqeach">
                                     <p className='question'>{ele.question}</p>
                                     <p className='answer'>{ele.answer}</p>
                                 </div>

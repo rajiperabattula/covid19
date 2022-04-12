@@ -3,10 +3,10 @@ import { statesList } from "../json/stateName";
 
 function MySelect(props) {
     return (
-    <div className="select-container">
+    <div className="select-container" testid="selectContainer">
       <select placeholder='Select the state...' className="select" onChange={(e) => {
         props.onChange(e.target.value)
-        }}>
+        }} testid="select">
         {
           statesList.map((ele)=>{
             return(

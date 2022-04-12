@@ -117,12 +117,12 @@ const changeData = (selectedTab) =>{
         <>
         <Header/>
         {stateData.length === 0 ? 
-        <div className="loading">
+        <div className="loading" testid="stateSpecificLoader">
             <img src="../images/load.gif" alt='loader'/>
         </div>
          :
-        <section className='stateSpecific-page'>
-            <div className='top-section'>
+        <section className='stateSpecific-page' testid="stateSpecificSection">
+            <div className='top-section' testid="stateSpecificTopSection">
                 <div className='state-name-date'>
                     <span className='state-heading'>{statesList.find((state)=> state.state_code === params).state_name}</span>
                     <span className='state-date'>{`last updated on ${month} ${day}, ${year}`}</span>
@@ -133,7 +133,7 @@ const changeData = (selectedTab) =>{
                 </div>
             </div>
 
-            <div className='cards-container'>
+            <div className='cards-container' testid="stateSpecificCardsContainer">
                 <div className='confirmed-block' id='confirmed-block' onClick={()=>changeData('confirmed')}>
                     <p className='confirmed-state'>Confirmed</p>
                     <img src='../images/confirmed.svg' alt='confirmed-icon'/>
@@ -156,7 +156,7 @@ const changeData = (selectedTab) =>{
                 </div>
             </div>
 
-            <div className='top-districts'>
+            <div className='top-districts' testid="stateSpecificTopDistricts">
                 <p className='top-districts-title confirmed-state'>Top Districts</p>
                 <div className='top-districts-content-section'>
                     {
@@ -173,21 +173,21 @@ const changeData = (selectedTab) =>{
                 </div>
             </div>
             
-            <div className='barCharts-block'>
+            <div className='barCharts-block' testid="stateSpecificBarChartsBlock">
             <MyBarChart dates={timelineStateDataArray} selectedTab={currentSelectedType} fillColor={fillColor}/>
             </div>
-            <div className='line-charts-block'>
+            <div className='line-charts-block' testid="stateSpecificLineChartsBlock">
                 <div className='line-chart-heading'>Daily Spread Trends</div>
-                <div className='confirmed-lineChart'>
+                <div className='confirmed-lineChart' testid="confirmedLineChart">
                     <MyLineChart dates={timelineStateDataArray} selectedTab='confirmed' strokeColor='#9A0E31'/>
                 </div>
-                <div className='active-lineChart'>
+                <div className='active-lineChart' testid="activeLineChart">
                     <MyLineChart dates={timelineStateDataArray} selectedTab='tested' strokeColor='#0A4FA0'/>
                 </div>
-                <div className='recovered-lineChart'>
+                <div className='recovered-lineChart' testid="recoveredLineChart">
                     <MyLineChart dates={timelineStateDataArray} selectedTab='recovered' strokeColor='#216837'/>
                 </div>
-                <div className='deceased-lineChart'>
+                <div className='deceased-lineChart' testid="deceasedLineChart">
                     <MyLineChart dates={timelineStateDataArray} selectedTab='deceased' strokeColor='#474C57'/>
                 </div>
             </div>
