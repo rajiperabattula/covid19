@@ -25,7 +25,7 @@ function MyLineChart(props){
     return(
         <>
         <LineChart
-          width={1146}
+          width={window.innerWidth>900 ? 1146 : (window.innerWidth>450? 360:330)}
           height={328}
           data={data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

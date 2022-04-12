@@ -22,11 +22,10 @@ function MyBarChart(props){
     });
     }
     data.splice(10,data.length);
-    console.log("sssssssss",data);
     return(
         <>
         <div>
-        <BarChart width={1046} height={350} data={data}>
+        <BarChart width={window.innerWidth>900 ? 1146 : (window.innerWidth>450? 360:330)} height={330} data={data}>
           <XAxis dataKey="date" />
           <YAxis />
           <Tooltip />

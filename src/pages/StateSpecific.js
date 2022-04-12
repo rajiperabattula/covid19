@@ -137,22 +137,22 @@ const changeData = (selectedTab) =>{
                 <div className='confirmed-block' id='confirmed-block' onClick={()=>changeData('confirmed')}>
                     <p className='confirmed-state'>Confirmed</p>
                     <img src='../images/confirmed.svg' alt='confirmed-icon'/>
-                    <span className='confirmed-state'>{stateDataArray[0] && stateDataArray[0].confirmed}</span>
+                    <p className='confirmed-state'>{stateDataArray[0] && stateDataArray[0].confirmed}</p>
                 </div>
                 <div className='active-block' id='active-block' onClick={()=>changeData('active')}>
                     <p className='active-state'>Active</p>
                     <img src='../images/active.svg' alt='active-icon'/>
-                    <span className='active-state'>{stateDataArray[0] && stateDataArray[0].tested}</span>
+                    <p className='active-state'>{stateDataArray[0] && stateDataArray[0].tested}</p>
                 </div>
                 <div className='recovered-block' id='recovered-block' onClick={()=>changeData('recovered')}>
                     <p className='recovered-state'>Recovered</p>
                     <img src='../images/recovered.svg' alt='recovered-icon'/>
-                    <span className='recovered-state'>{stateDataArray[0] && stateDataArray[0].recovered}</span>
+                    <p className='recovered-state'>{stateDataArray[0] && stateDataArray[0].recovered}</p>
                 </div>
                 <div className='deceased-block' id='deceased-block' onClick={()=>changeData('deceased')}>
                     <p className='deceased-state'>Deceased</p>
                     <img src='../images/diceased.svg' alt='deceased-icon'/>
-                    <span className='deceased-state'>{stateDataArray[0] && stateDataArray[0].deceased}</span>
+                    <p className='deceased-state'>{stateDataArray[0] && stateDataArray[0].deceased}</p>
                 </div>
             </div>
 
