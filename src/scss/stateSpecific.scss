@@ -25,8 +25,8 @@
             }
         }
         .state-heading{
-            width: 312px;
             height: 64px;
+            padding: 0 30px;
             border-radius: 32px;
             background: rgba(2, 132, 199, 0.16);
             font-weight: 600;
@@ -53,6 +53,8 @@
     }
     .cards-container{
         padding-top: 0px;
+        max-width: 1146px;
+        width: 100%;
         @media screen and (max-width:900px) {
             font-size: 12px;
         }
